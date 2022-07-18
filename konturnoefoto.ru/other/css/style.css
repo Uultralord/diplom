@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+/* Grid */
+/* function for calculating the size */
+body {
+  position: relative;
+  padding: 0;
+  font-family: 'Philosopher', sans-serif;
+}
+
+body.is-grid::after {
+  content: '';
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 2.08333%;
+  right: 2.08333%;
+  pointer-events: none;
+}
+
+.body_index {
+  background-image: url("../img/background-img.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Menu */
+.nav {
+  display: inline-block;
+  height: auto;
+  text-align: right;
+  background: black;
+  width: 100%;
+  -webkit-box-shadow: 0 0 10px 5px;
+          box-shadow: 0 0 10px 5px;
+  padding: 25px;
+}
+
+.nav_menu {
+  margin-right: 2.08333%;
+  background: #727272;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: calc( 0.0075 * 100vw + 6.4px);
+  text-decoration: none;
+}
+
+.nav_menu_1 {
+  text-align: left;
+  float: left;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: calc( 0.00625 * 100vw + 7px);
+  width: 39.02174%;
+}
+
+.welcome_text {
+  margin-right: 4.16667%;
+  background: white;
+  border: none;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-size: calc( 0.01 * 100vw + 3.2px);
+  text-decoration: none;
+  cursor: default;
+}
+
+/*-------------- INDEX.php --------------*/
+/* Slider */
+.container_slider_css {
+  width: 99.92754%;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo_slider_css {
+  position: absolute;
+  -webkit-animation: round 16s infinite;
+          animation: round 16s infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes round {
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@keyframes round {
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+img:nth-child(4) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+img:nth-child(3) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+img:nth-child(2) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+img:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.text_container {
+  text-align: center;
+  position: relative;
+  background: #ffffffac;
+  font-size: calc( 0.0075 * 100vw + 10.4px);
+  width: 78.04348%;
+  margin: 2.08333% 12.24638%;
+}
+
+/* Manual */
+.manual {
+  text-align: center;
+  margin: 2.08333% 0;
+  background: #ffffffac;
+}
+
+.text {
+  width: 20.32609%;
+  margin: 2.08333% 39.47464%;
+  position: relative;
+  font-size: calc( 0.01 * 100vw + 11.2px);
+}
+
+li {
+  width: 56.08696%;
+  margin: 2.08333% 22.40942%;
+  display: list-item;
+  list-style-position: inside;
+  text-align: left;
+  font-size: calc( 0.005 * 100vw + 11.6px);
+}
+
+/* Section for editing */
+.foto_edit {
+  text-align: center;
+  margin: 2.08333% 0;
+}
+
+canvas {
+  background: #00000027;
+  width: 37.3913%;
+  margin: 2.08333%;
+}
+
+/* Buttons for editing */
+.editor-buttons {
+  display: inline-block;
+}
+
+.editor-buttons button {
+  margin: 1.63043% 20px;
+  background: black;
+  border-color: #ffffff;
+  color: white;
+  font-family: "Lato";
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: calc( 0.00375 * 100vw + 10.2px);
+  border: 3px inset;
+}
+
+.editor-buttons button:hover {
+  background: #ffffff;
+  color: black;
+  cursor: pointer;
+  border-color: #010101;
+  border: 3px outset;
+}
+
+[type="file"] {
+  display: none;
+}
+
+[type="file"] + label {
+  margin: 1.63043% 20px;
+  background: white;
+  border: 3px solid #009688;
+  color: #009688;
+  cursor: pointer;
+  font-family: "Lato";
+  font-size: calc( 0.00375 * 100vw + 10.2px);
+  padding: 8px 12px;
+  border-radius: 15px;
+}
+
+[type="file"] + label:hover {
+  background-color: #007d71;
+  border: 3px solid #00b09f;
+  color: white;
+}
+
+.edit-btn button {
+  border-radius: 15px;
+  border: 3px solid #3498db;
+  color: #3498db;
+  background: white;
+  margin: 1.63043% 20px;
+  font-family: "Lato";
+  padding: 8px 12px;
+  font-size: calc( 0.00375 * 100vw + 10.2px);
+}
+
+.edit-btn button:hover {
+  background-color: #258cd1;
+  border: 3px solid #4aa3df;
+  color: white;
+  cursor: pointer;
+}
+
+/*-------------- LOGIN.php AND REGISTRATION.php -------------- */
+input, textarea {
+  font-family: "PT Sans", sans-serif;
+  font-size: calc( 0.0075 * 100vw + 4.4px);
+}
+
+.user-form {
+  background: #dadada;
+  width: 54.45652%;
+  margin: 8.53261% 22.40942%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.top-head {
+  background: #b3b8b8;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+  padding: 2.08333%;
+  font-size: calc( 0.0075 * 100vw + 8.4px);
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.user-form input {
+  margin: 4.16667% 10.41667% 0;
+  width: 80%;
+  padding: calc( 0.0075 * 100vw + 2.4px) calc( 0.01 * 100vw + 7.2px);
+  border: 1px solid #000000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+input[type=submit] {
+  padding: calc( 0.0075 * 100vw + 2.4px) calc( 0.0125 * 100vw + 4px);
+  cursor: pointer;
+  background: #2f889a;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  width: 40.65217%;
+  margin: 4.16667% 25.59783%;
+}
+
+/* Footer */
+footer {
+  color: #b5b5b5;
+  height: 3.26087%;
+  text-align: center;
+  background: #010101ab;
+}
+
+.text_footer {
+  font-family: 'Philosopher', sans-serif;
+  font-size: calc( 0.0075 * 100vw + 6.4px);
+  width: 20.32609%;
+  padding: 1.63043%;
+  margin: 0 39.47464%;
+}
+/*# sourceMappingURL=style.css.map */

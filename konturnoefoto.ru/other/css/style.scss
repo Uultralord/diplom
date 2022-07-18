@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+} 
+/* Grid */
+  $grid_margin: percentage(40 / 1920); // 40 / 1920 * 100%;
+  $grid_width: percentage(157 / (1920 - 40 * 2));
+  $grid_gutter: percentage(30 / (1920 - 40 * 2)); 
+/* function for calculating the size */
+  @function calcSize($f-min, $f-max, $v-min, $v-max) {
+    $k: ($f-max - $f-min)/($v-max - $v-min);
+    $b: $f-min - $k * $v-min;
+    $b: $b * 1px;
+    @return calc( #{$k} * 100vw + #{$b} );}
+  body {
+      position: relative;
+      padding: 0;
+      font-family: 'Philosopher', sans-serif;
+      &.is-grid::after {
+          content: '';
+          position: absolute;
+          z-index: 1000;
+          top: 0;
+          bottom: 0;
+          left: $grid_margin;
+          right: $grid_margin;
+          pointer-events: none;}}
+  .body_index{
+    background-image: url("../img/background-img.jpg");
+    background-size: cover;
+    height: 100vh;}
+/* Menu */ 
+  .nav{
+    display: inline-block;
+    height: auto;
+    text-align: right;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    box-shadow: 0 0 10px 5px;
+    padding: 25px;}
+  .nav_menu{
+    margin-right: $grid_margin * 1;
+    background: rgb(114, 114, 114);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: calcSize(10, 16, 480, 1280);
+    text-decoration: none;}
+  .nav_menu_1{
+    text-align: left;
+    float: left;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: calcSize(10, 15, 480, 1280);
+    width: $grid_width * 4 + $grid_gutter * 3;}  
+  .welcome_text{
+    margin-right: $grid_margin * 2;
+    background: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 12px;
+    border-radius: 2px;
+    font-size: calcSize(8, 16, 480, 1280);
+    text-decoration: none;
+    cursor: default;}
+/*-------------- INDEX.php --------------*/ 
+/* Slider */
+  .container_slider_css{
+    width: $grid_width * 10 + $grid_gutter * 6.4 + $grid_margin * 2;
+    overflow:hidden;
+    position:relative;}
+  .photo_slider_css{
+    position:absolute;
+    animation:round 16s infinite;
+    opacity:0;}
+  @keyframes round {
+    30%{opacity:1}
+    40%{opacity:0}}
+    img:nth-child(4){animation-delay:12s}
+    img:nth-child(3){animation-delay:8s}
+    img:nth-child(2){animation-delay:4s}
+    img:nth-child(1){animation-delay:0s}
+  .text_container{
+    text-align: center;
+    position: relative;
+    background: #ffffffac;
+    font-size: calcSize(14, 20, 480, 1280);
+    width: $grid_width * 8 + $grid_gutter * 6;
+    margin: ($grid_margin * 1) ($grid_width * 1 + $grid_gutter * 1 +  $grid_margin * 1);}
+/* Manual */ 
+  .manual{
+    text-align: center;
+    margin: ($grid_margin * 1) 0;
+    background: #ffffffac;}
+  .text{
+    width: $grid_width * 2 + $grid_gutter * 2;
+    margin: ($grid_margin * 1) ($grid_width * 4 + $grid_gutter * 2 + $grid_margin * 1) ;
+    position: relative;
+    font-size: calcSize(16, 24, 480, 1280);}
+  li {
+    width: $grid_width * 6 + $grid_gutter * 3;
+    margin: ($grid_margin * 1) ($grid_width *2 + $grid_gutter * 2 +  $grid_margin * 1);
+    display: list-item;
+    list-style-position: inside;
+    text-align: left;
+    font-size: calcSize(14, 18, 480, 1280);}  
+/* Section for editing */ 
+  .foto_edit{
+    text-align: center;
+    margin: ($grid_margin * 1) 0;}
+  canvas {
+    background: #00000027;
+    width: $grid_width * 4 + $grid_gutter * 2;
+    margin: ($grid_margin * 1);}
+/* Buttons for editing */
+  .editor-buttons {
+    display: inline-block;}
+  .editor-buttons button {
+    margin: ($grid_gutter * 1) 20px;
+    background: rgb(0, 0, 0);
+    border-color: #ffffff;
+    color: white;
+    font-family: "Lato";
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: calcSize(12, 15, 480, 1280);
+    border: 3px inset;}
+  .editor-buttons button:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-color: #010101;
+    border: 3px outset;}  
+  [type="file"] {
+    display: none;}
+  [type="file"] + label {
+    margin: ($grid_gutter * 1) 20px;
+    background: white;
+    border: 3px solid #009688;
+    color: #009688;
+    cursor: pointer;
+    font-family: "Lato";
+    font-size: calcSize(12, 15, 480, 1280);
+    padding: 8px 12px;
+    border-radius: 15px;}
+  [type="file"] + label:hover {
+    background-color: darken(#009688, 5%);
+    border: 3px solid lighten(#009688, 5%);
+    color: white;}
+  .edit-btn button{ 
+    border-radius: 15px;
+    border: 3px solid #3498db; 
+    color: #3498db;
+    background: white;
+    margin: ($grid_gutter * 1) 20px;
+    font-family: "Lato";
+    padding: 8px 12px;
+    font-size: calcSize(12, 15, 480, 1280);} 
+  .edit-btn button:hover {
+    background-color: darken(#3498db, 5%);
+    border: 3px solid lighten(#3498db, 5%);
+    color: white;
+    cursor: pointer;}
+/*-------------- LOGIN.php AND REGISTRATION.php -------------- */    
+  input, textarea {
+    font-family: "PT Sans", sans-serif;
+    font-size: calcSize(8, 14, 480, 1280);}
+  .user-form{
+    background: rgb(218, 218, 218);
+    width: $grid_width * 6 + $grid_gutter * 2;
+    margin: ($grid_width * 1) ($grid_width * 2 + $grid_gutter * 2 + $grid_margin * 1);
+    border-radius: 15px;
+    text-align: center;}
+  .top-head{
+    background: #b3b8b8;
+    height:auto;
+    border-radius: 15px 15px 0 0;
+    padding: $grid_margin * 1;
+    font-size: calcSize(12, 18, 480, 1280);}
+  input {
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;}
+  .user-form input {
+    margin: ($grid_margin * 2) ($grid_margin * 5) 0;
+    width: 80%;
+    padding: (calcSize(6, 12, 480, 1280)) (calcSize(12, 20, 480, 1280));
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;}
+  input[type=submit] {
+    padding: (calcSize(6, 12, 480, 1280)) (calcSize(10, 20, 480, 1280));
+    cursor: pointer;
+    background: #2f889a;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: $grid_width * 4 + $grid_gutter * 4;
+    margin: ($grid_margin * 2) ($grid_width * 3);}  
+/* Footer */
+  footer{
+    color: #b5b5b5;    
+    height: $grid_gutter * 2;
+    text-align: center;
+    background: #010101ab;}
+  .text_footer{
+    font-family: 'Philosopher', sans-serif;
+    font-size: calcSize(10, 16, 480, 1280);
+    width: $grid_width * 2 + $grid_gutter * 2;
+    padding: $grid_gutter * 1;
+    margin: 0 ($grid_width * 4 + $grid_gutter * 2 + $grid_margin * 1) ;}
